@@ -10,8 +10,8 @@ Main Email: amosndungo@gmail.com
 
 import random
 
-NUM_DIGITS = 3  # Try Setting This to 1 or 10
-MAX_GUESSES = 10  # Try changing to 1 or 100
+NUM_DIGITS = 5  # Try Setting This to 1 or 10
+MAX_GUESSES = 100  # Try changing to 1 or 100
 
 
 def main():
