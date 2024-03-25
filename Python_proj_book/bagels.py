@@ -52,7 +52,7 @@ def main():
         while numGuesses < MAX_GUESSES:
             guess = ""
             # Keep looping until they enter a valid guess
-            while len(guess) != NUM_DIGITS or not guess.isascii():
+            while len(guess) != NUM_DIGITS or not guess.isalnum():
                 print(f"Guess #{numGuesses}: ")
                 guess = input("> ")
 
