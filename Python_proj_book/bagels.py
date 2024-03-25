@@ -52,7 +52,7 @@ def main():
         while numGuesses < MAX_GUESSES:
             guess = ""
             # Keep looping until they enter a valid guess
-            while len(guess) != NUM_DIGITS or not guess.isdecimal():
+            while len(guess) != NUM_DIGITS or not guess.isascii():
                 print(f"Guess #{numGuesses}: ")
                 guess = input("> ")
 
@@ -62,7 +62,7 @@ def main():
 
             if guess == secretNum:
                 break  # Correct guess
-            if numGuesses > MAX_GUESSES:
+            if numGuesses >= MAX_GUESSES:
                 print("You've run out of guesses")
                 print(f"The answer was {secretNum}")
 
@@ -79,7 +79,9 @@ def getSecretNum():
     Returns a string made up of NUM_DIGITS unique random digits.
     """
 
-    numbers = list("0123456789")  # Create a list of digits from 0 to 9
+    numbers = list(
+        "0123456789abcdefghijklmnopqrstuvwxyz"
+    )  # Create a list of digits from 0 to 9
     random.shuffle(numbers)  # Shuffle the numbers into random order.
 
     # Get the first NUM_DIGITS digits in the list for the secret number:
